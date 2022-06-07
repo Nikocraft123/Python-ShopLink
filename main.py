@@ -2,14 +2,13 @@
 import sys
 import kivy
 from kivy.app import App
-from widget.welcome import WidgetWelcome
-from widget.info_line import WidgetInfoLine
+from constants import *
 
 
 # CLASSES
 
-# Shop ready
-class ShopReady(App):
+# Shop link
+class ShopLink(App):
 
     # CONSTRUCTOR
     def __init__(self, **kwargs):
@@ -17,12 +16,19 @@ class ShopReady(App):
         # Initialize kivy app
         super().__init__(**kwargs)
 
+        # Define version and author
+        self.version = VERSION
+        self.author = AUTHOR
+
 
     # METHODS
 
     # Build
     def build(self):
-        return WidgetWelcome()
+        from widget.welcome import WidgetWelcome
+        from widget.info_line import WidgetInfoLine
+        from widget.host_address import WidgetHostAddress
+        return WidgetWelcome(self)
 
 
 # FUNCTIONS
@@ -34,7 +40,7 @@ def main(args: list[str]):
     kivy.require("2.1.0")
 
     # Initialize the application
-    app = ShopReady()
+    app = ShopLink()
 
     # Run the application
     app.run()
