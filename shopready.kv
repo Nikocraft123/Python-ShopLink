@@ -1,0 +1,41 @@
+WidgetWelcome:
+
+<WidgetWelcome>:
+    orientation: "vertical"
+    Label:
+        text: "Shop Ready"
+        size_hint: 1, .5
+        font_size: "50dp"
+    Label:
+        text: "by Nikocraft"
+        size_hint: 1, .2
+        font_size: "25dp"
+    Label:
+        text: "Welcome!"
+        pos_hint: {"center_x": .5}
+    Button:
+        text: "Get started"
+    WidgetInfoLine:
+
+<WidgetInfoLine>:
+    size_hint: 1, None
+    height: "35dp"
+    AnchorLayout:
+        anchor_x: "left"
+        Label:
+            text: "Alpha 1.1"
+            font_size: "16dp"
+            size_hint: None, 1
+            width: "80dp"
+    AnchorLayout:
+        anchor_x: "center"
+        Label:
+            text: "Shop Ready"
+            font_size: "16dp"
+    AnchorLayout:
+        anchor_x: "right"
+        Label:
+            text: "by Nikocraft"
+            font_size: "16dp"
+            size_hint: None, 1
+            width: "100dp"
