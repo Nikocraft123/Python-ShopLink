@@ -1,0 +1,103 @@
+<WidgetInfoLine>:
+    size_hint: 1, None
+    height: "35dp"
+    AnchorLayout:
+        anchor_x: "left"
+        Label:
+            text: app.version
+            font_size: "16dp"
+            size_hint: None, 1
+            width: "80dp"
+            font_name: "fonts/YuGothL.ttc"
+    AnchorLayout:
+        anchor_x: "center"
+        Label:
+            text: "Shop Link"
+            font_size: "16dp"
+            font_name: "fonts/YuGothL.ttc"
+    AnchorLayout:
+        anchor_x: "right"
+        Label:
+            text: app.author
+            font_size: "16dp"
+            size_hint: None, 1
+            width: "80dp"
+            font_name: "fonts/YuGothL.ttc"
+
+
+<WidgetErrorPopup>:
+    auto_dismiss: False
+    size_hint: .9, .5
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: ""
+        Label:
+            text: root.message1
+            font_size: "22dp"
+            font_name: "fonts/YuGothM.ttc"
+            size_hint: 0.8, None
+            height: "50dp"
+            pos_hint: {"center_x": .5}
+        Label:
+            text: root.message2
+            font_size: "22dp"
+            font_name: "fonts/YuGothM.ttc"
+            size_hint: 0.8, None
+            height: "50dp"
+            pos_hint: {"center_x": .5}
+        Label:
+            text: ""
+        Button:
+            text: "OK"
+            font_size: "30dp"
+            font_name: "fonts/YuGothB.ttc"
+            size_hint: 0.8, None
+            height: "50dp"
+            pos_hint: {"center_x": .5}
+            on_release: root.dismiss()
+        Label:
+            text: ""
+
+
+<WidgetConfirmPopup>:
+    auto_dismiss: False
+    size_hint: .9, .5
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: ""
+        Label:
+            text: root.message1
+            font_size: "22dp"
+            font_name: "fonts/YuGothM.ttc"
+            size_hint: 0.8, None
+            height: "50dp"
+            pos_hint: {"center_x": .5}
+        Label:
+            text: root.message2
+            font_size: "22dp"
+            font_name: "fonts/YuGothM.ttc"
+            size_hint: 0.8, None
+            height: "50dp"
+            pos_hint: {"center_x": .5}
+        Label:
+            text: ""
+        Button:
+            text: "No"
+            font_size: "30dp"
+            font_name: "fonts/YuGothB.ttc"
+            size_hint: 0.8, None
+            height: "50dp"
+            pos_hint: {"center_x": .5}
+            on_release: root.dismiss()
+        Button:
+            text: "Yes"
+            font_size: "30dp"
+            font_name: "fonts/YuGothB.ttc"
+            size_hint: 0.8, None
+            height: "50dp"
+            pos_hint: {"center_x": .5}
+            on_release: root.yes_method(*root.yes_args); root.dismiss()
+        Label:
+            text: ""

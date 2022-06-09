@@ -1,0 +1,255 @@
+<WidgetHostAddressSelect>:
+    name: "host_address_select"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: ""
+            size_hint: 1, .15
+        Label:
+            text: "Host Address"
+            size_hint: 1, .4
+            font_size: "50dp"
+            font_name: "fonts/YuGothB.ttc"
+        Label:
+            text: "Choose the default host or"
+            size_hint: 1, None
+            height: "35dp"
+            font_size: "25dp"
+            font_name: "fonts/YuGothR.ttc"
+        Label:
+            text: "create your own one:"
+            size_hint: 1, None
+            height: "35dp"
+            font_size: "25dp"
+            font_name: "fonts/YuGothR.ttc"
+        Label:
+            text: ""
+            size_hint: 1, .15
+        BoxLayout:
+            size_hint_x: .9
+            pos_hint: {"center_x": .5}
+            orientation: "vertical"
+            BoxLayout:
+                size_hint: 1, None
+                height: "45dp"
+                TextInput:
+                    id: search
+                    hint_text: "Search"
+                    font_size: "25dp"
+                    font_name: "fonts/YuGothB.ttc"
+                    padding_y: [self.height / 2.0 - (self.line_height / 2.0), 0]
+                    multiline: False
+                Button:
+                    text: "X"
+                    font_size: "28dp"
+                    font_name: "fonts/YuGothB.ttc"
+                    size_hint: None, 1
+                    width: "30dp"
+                    on_release: root.button_search_reset(self)
+            ScrollView:
+                BoxLayout:
+                    id: host_list
+                    size_hint: 1, None
+                    height: self.minimum_height
+                    orientation: "vertical"
+            BoxLayout:
+                size_hint: 1, None
+                height: "40dp"
+                Button:
+                    id: edit_button
+                    text: "Edit"
+                    font_size: "25dp"
+                    font_name: "fonts/YuGothM.ttc"
+                    on_release: root.button_edit(self)
+                Button:
+                    text: "Create"
+                    font_size: "25dp"
+                    font_name: "fonts/YuGothM.ttc"
+                    on_release: root.button_create(self)
+            Button:
+                text: "Connect"
+                font_size: "25dp"
+                font_name: "fonts/YuGothM.ttc"
+                size_hint: 1, None
+                height: "40dp"
+                on_release: root.button_connect(self)
+        Label:
+            text: ""
+            size_hint: 1, .15
+        WidgetInfoLine:
+
+
+<WidgetHostAddressCreate>:
+    name: "host_address_create"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: ""
+            size_hint: 1, .15
+        Label:
+            text: "Create Host"
+            size_hint: 1, .4
+            font_size: "50dp"
+            font_name: "fonts/YuGothB.ttc"
+        Label:
+            text: "Type the name and the"
+            size_hint: 1, None
+            height: "35dp"
+            font_size: "25dp"
+            font_name: "fonts/YuGothR.ttc"
+        Label:
+            text: "IP address of the host:"
+            size_hint: 1, None
+            height: "35dp"
+            font_size: "25dp"
+            font_name: "fonts/YuGothR.ttc"
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: ""
+            BoxLayout:
+                size_hint: .9, None
+                pos_hint: {"center_x": .5}
+                height: "45dp"
+                Label:
+                    text: "Name:"
+                    size_hint: .35, 1
+                    font_size: "22dp"
+                    font_name: "fonts/YuGothR.ttc"
+                TextInput:
+                    id: name
+                    hint_text: "Name"
+                    font_size: "20dp"
+                    font_name: "fonts/YuGothB.ttc"
+                    padding_y: [self.height / 2.0 - (self.line_height / 2.0), 0]
+                    multiline: False
+            Label:
+                text: ""
+                size_hint_y: None
+                height: "10dp"
+            BoxLayout:
+                size_hint: .9, None
+                pos_hint: {"center_x": .5}
+                height: "45dp"
+                Label:
+                    text: "IP:"
+                    size_hint: .35, 1
+                    font_size: "22dp"
+                    font_name: "fonts/YuGothR.ttc"
+                TextInput:
+                    id: address
+                    hint_text: "IP"
+                    font_size: "18dp"
+                    font_name: "fonts/YuGothB.ttc"
+                    padding_y: [self.height / 2.0 - (self.line_height / 2.0), 0]
+                    multiline: False
+            Label:
+                text: ""
+        Button:
+            text: "Cancel"
+            font_size: "25dp"
+            font_name: "fonts/YuGothM.ttc"
+            size_hint: .9, None
+            pos_hint: {"center_x": .5}
+            height: "40dp"
+            on_release: root.button_cancel(self)
+        Button:
+            text: "Done"
+            font_size: "25dp"
+            font_name: "fonts/YuGothM.ttc"
+            size_hint: .9, None
+            pos_hint: {"center_x": .5}
+            height: "40dp"
+            on_release: root.button_done(self)
+        Label:
+            text: ""
+            size_hint: 1, .15
+        WidgetInfoLine:
+
+
+<WidgetHostAddressEdit>:
+    name: "host_address_edit"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: ""
+            size_hint: 1, .15
+        Label:
+            text: "Edit Host"
+            size_hint: 1, .4
+            font_size: "50dp"
+            font_name: "fonts/YuGothB.ttc"
+        Label:
+            text: "Type the name and the"
+            size_hint: 1, None
+            height: "35dp"
+            font_size: "25dp"
+            font_name: "fonts/YuGothR.ttc"
+        Label:
+            text: "IP address of the host:"
+            size_hint: 1, None
+            height: "35dp"
+            font_size: "25dp"
+            font_name: "fonts/YuGothR.ttc"
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: ""
+            BoxLayout:
+                size_hint: .9, None
+                pos_hint: {"center_x": .5}
+                height: "45dp"
+                Label:
+                    text: "Name:"
+                    size_hint: .35, 1
+                    font_size: "22dp"
+                    font_name: "fonts/YuGothR.ttc"
+                TextInput:
+                    id: name
+                    hint_text: "Name"
+                    font_size: "20dp"
+                    font_name: "fonts/YuGothB.ttc"
+                    padding_y: [self.height / 2.0 - (self.line_height / 2.0), 0]
+                    multiline: False
+            Label:
+                text: ""
+                size_hint_y: None
+                height: "10dp"
+            BoxLayout:
+                size_hint: .9, None
+                pos_hint: {"center_x": .5}
+                height: "45dp"
+                Label:
+                    text: "IP:"
+                    size_hint: .35, 1
+                    font_size: "22dp"
+                    font_name: "fonts/YuGothR.ttc"
+                TextInput:
+                    id: address
+                    hint_text: "IP"
+                    font_size: "18dp"
+                    font_name: "fonts/YuGothB.ttc"
+                    padding_y: [self.height / 2.0 - (self.line_height / 2.0), 0]
+                    multiline: False
+            Label:
+                text: ""
+        Button:
+            text: "Cancel"
+            font_size: "25dp"
+            font_name: "fonts/YuGothM.ttc"
+            size_hint: .9, None
+            pos_hint: {"center_x": .5}
+            height: "40dp"
+            on_release: root.button_cancel(self)
+        Button:
+            text: "Done"
+            font_size: "25dp"
+            font_name: "fonts/YuGothM.ttc"
+            size_hint: .9, None
+            pos_hint: {"center_x": .5}
+            height: "40dp"
+            on_release: root.button_done(self)
+        Label:
+            text: ""
+            size_hint: 1, .15
+        WidgetInfoLine:

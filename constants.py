@@ -1,5 +1,5 @@
 # CONSTANTS
 
 # About
-AUTHOR = "Nikocraft"
-VERSION = "Alpha 1.1"
+AUTHOR: str = "Nikocraft"
+VERSION: str = "Alpha 1.1"

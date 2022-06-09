@@ -1,18 +1,14 @@
 # IMPORTS
-from kivy.uix.boxlayout import BoxLayout
-from main import ShopLink
+from kivy.uix.screenmanager import Screen
 
 
 # CLASSES
 
 # Welcome widget
-class WidgetWelcome(BoxLayout):
+class WidgetWelcome(Screen):
 
     # CONSTRUCTOR
-    def __init__(self, app: ShopLink, **kwargs):
-
-        # Set the application
-        self.app = app
+    def __init__(self, **kwargs):
 
         # Initialize widget
         super().__init__(**kwargs)
@@ -21,5 +17,8 @@ class WidgetWelcome(BoxLayout):
     # METHODS
 
     # On button get started released
-    def button_get_started(self):
-        print("Get started")
+    def button_get_started(self, widget):
+
+        # Transition to the host address select screen
+        self.manager.current = "host_address_select"
+        self.manager.transition.direction = "left"

@@ -1,4 +1,4 @@
-# Python-ShopReady
+# Python-ShopLink
 A synchronised shopping to do list manager
 
 Development language: Python

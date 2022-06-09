@@ -1,0 +1,33 @@
+<WidgetWelcome>:
+    name: "welcome"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: ""
+            size_hint: 1, .3
+        Label:
+            text: "Shop Link"
+            size_hint: 1, .4
+            font_size: "55dp"
+            font_name: "fonts/YuGothB.ttc"
+        Label:
+            text: "by " + app.author
+            size_hint: 1, .2
+            font_size: "25dp"
+            font_name: "fonts/YuGothM.ttc"
+        Label:
+            text: "Welcome!"
+            font_size: "40dp"
+            pos_hint: {"center_x": .5}
+            font_name: "fonts/YuGothR.ttc"
+        Button:
+            text: "Get started"
+            font_size: "25dp"
+            size_hint: .6, .4
+            pos_hint: {"center_x": .5}
+            on_release: root.button_get_started(self)
+            font_name: "fonts/YuGothM.ttc"
+        Label:
+            text: ""
+            size_hint: 1, .3
+        WidgetInfoLine:
