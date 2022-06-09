@@ -1,2 +1,11 @@
 # IDE Files
 .idea
+
+# Buildozer
+.buildozer
+
+# Configurations
+config
+
+# Logs
+logs
